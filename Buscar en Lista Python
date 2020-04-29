@@ -1,0 +1,17 @@
+import random
+buscar=int(input("que numero desea buscar del 0 al 20:      "))
+numeros =list()
+repetidos = []
+unicos = []
+for i in range (20):
+    numeros.append (random.randint(0, 20))
+for x in numeros:
+    if x not in unicos:
+       unicos.append(x)
+    else:
+       if x not in repetidos:
+           repetidos.append(x)
+            
+print("lista de numeros:  ",numeros)
+print("los numeros que se repiten son:   ",repetidos)
+print ("su numero se repite:   ",numeros.count(buscar), "veces")
