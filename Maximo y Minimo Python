@@ -1,0 +1,8 @@
+import random
+numero =list()
+for i in range (10):
+    numero.append (random.randint(0, 10000000))
+print(numero)
+print("el numero mayor es: ",(max(numero)))
+print("el numero menor es: ",(min(numero)))
+print("el promedio es: ",(sum(numero)/10))
