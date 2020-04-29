@@ -1,0 +1,7 @@
+print("numeros pares")
+NP=int(input("numeros pares que desea ver:  "))
+numeros_pares = 0
+print("los numeros pares son:    ")
+for i in range (0, NP, 1):
+    numeros_pares = numeros_pares+2
+    print(numeros_pares)
