@@ -1,0 +1,15 @@
+nu=int(input("cuantos utiles vas a ingresar:    "))
+utiles = list()
+Putiles = list ()
+for i in range (nu):
+    utiles.append(input("digite el util que desea guardar:  "))
+    Putiles.append(int(input("digite el precio del util:   ")))
+print("Lista de utiles con precio")
+      
+for i in range (nu):
+     print(utiles[i], "$", Putiles[i])
+ 
+print("articulos que valen menos de $ 15000:   ")
+for i in range (nu):
+    if Putiles[i]<15000:  
+        print(utiles[i], "$", Putiles[i])
