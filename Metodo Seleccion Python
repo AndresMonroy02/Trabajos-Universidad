@@ -1,0 +1,19 @@
+def ordenamiento_Seleccion(unaLista):
+   for llenarRanura in range(len(unaLista)-1,0,-1):
+       posicionDelMayor=0
+       for ubicacion in range(1,llenarRanura+1):
+           if unaLista[ubicacion]>unaLista[posicionDelMayor]:
+               posicionDelMayor = ubicacion
+
+       temp = unaLista[llenarRanura]
+       unaLista[llenarRanura] = unaLista[posicionDelMayor]
+       unaLista[posicionDelMayor] = temp
+
+miLista=[]
+T=int(input("Digte el tamaño de la lista: "))
+for i in range(T):
+    A=int(input("Digite el Numero a añadir: "))
+    miLista.append(A)
+    
+ordenamiento_Seleccion(miLista)
+print(miLista)
