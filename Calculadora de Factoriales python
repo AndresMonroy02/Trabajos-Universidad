@@ -7,5 +7,4 @@ else:
     for i in range (numero):
        fact = fact*(i+1)
     print("El factorial es:  ", fact)
-
        
