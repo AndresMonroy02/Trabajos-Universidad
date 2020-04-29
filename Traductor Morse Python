@@ -1,0 +1,17 @@
+codigo_morse = {
+    "a": ".-", "b": "-...", "c": "-.-.", "d": "-..", "e": ".", "f": "..-.", 
+    "g": "--.", "h": "....", "i": "..", "j": "·---", "k": "-.-", "l": ".-..", 
+    "m": "--", "n": "-.", "ñ": "--.--", "o": "---", "p": ".__.", "q": "--.-",
+    "r": ".-.", "s": "...", "t": "-", "u": "..-", "v": "...-", "w": ".--",
+    "x": "-..-", "y": "-.--", "z": "--..", 
+    
+}
+texto_descodificado = ""
+morse = input("Ingrese una palabra o texto a codificar: ")
+for c in morse:
+    if c != " " and c.lower() in codigo_morse:
+        texto_descodificado += codigo_morse[c.lower()]
+    else:
+        texto_descodificado += c
+    
+print("Texto codificado: {}".format(texto_descodificado))
