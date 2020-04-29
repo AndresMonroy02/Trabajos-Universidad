@@ -1,0 +1,24 @@
+import random
+matriz=[]
+a=int(input("Digite el numero de columnas de la matriz:    "))
+b=int(input("Digite el numero de filas de la matriz:    "))
+for i in range(b):
+    matriz.append([])
+    for j in range (a):
+        matriz[i].append(random.randint(0,99))
+for i in range (b):
+    print(matriz[i])
+c=0
+multiplicar=1
+while True:
+    c=int(input("Que fila desea multiplicar:"))
+    if c <0:
+        print("porfavor seleccione una fila")
+    elif c >b:
+        print("Por favor no se salga de los limites")
+    else:
+        c-=1
+        for j in range(a):
+            multiplicar*=matriz[c][j]
+        print("el resultado es:    ",multiplicar)
+        break
