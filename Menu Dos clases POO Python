@@ -1,0 +1,97 @@
+class directivos:
+    nombre=""
+    apellido=""
+    edadA=0
+    ID_A=0
+    telefono=0
+    ATrabajo=""
+    TContrato=""
+    def setnombre(self):
+        self.nombre=input("Digite el nombre: ")
+    def setapellido(self):
+        self.apellido=input("Digite el apellido: ")
+    def setedad(self):
+        self.edadA=int(input("Digite la edad: "))
+    def setID(self):
+        self.ID_A=input("Digite el numero de ID: ")
+    def settelefono(self):
+        self.telefono=int(input("Digite el numero de de telefono: "))
+    def setatrabajo(self):
+        self.ATrabajo=input("Digite el area de trabajo: ")
+    def setTContrato(self):
+        self.TContrato=input("Digite el tipo de contrato: ")
+        
+class estudiantes:
+    nom_es=""
+    ape_es=""
+    edadE=0
+    ID_E=0
+    telefonoE=0
+    AEsco=0
+    ValorP=0
+    def setnombre_es(self):
+        self.nom_es=input("Digite el nombre del estudiante: ")
+    def setape_es(self):
+        self.ape_es=input("Digite el apellido del estudiante: ")
+    def setedad_es(self):
+        self.edadE=int(input("Digite la edad: "))
+    def setID_E(self):
+        self.ID_E=int(input("Digite el codiogo del estudiante: "))
+    def setTelefonoE(self):
+        self.telefonoE=int(input("Digite el numero de telefono: "))
+    def setAEsco(self):
+        self.AEsco=int(input("Digite el año escolar en que esta: "))
+    def setValorP(self):
+        self.ValorP=int(input("Digite el valor de la pencion: "))
+    
+LD=[]
+LE=[]
+
+while True:
+
+    opcion = int(input("\nMENU DE OPCIONES\n----------\n\t" +
+                   "1. Agregar Directivos\n\t2. Agregar Estudiantes\n\t3. Consultar listas\n\t4. SALIR\n\n\t" +
+                   " INGRESE LA OPCION DE A REALIZAR: "));
+
+    
+    if opcion ==1:
+    
+        DIR=directivos()
+        DIR.setnombre()
+        DIR.setapellido()
+        DIR.setedad()
+        DIR.setID()
+        DIR.settelefono()
+        DIR.setatrabajo()
+        DIR.setTContrato()
+        LD.append(DIR)
+        
+    elif opcion ==2:
+        EST=estudiantes()
+        EST.setnombre_es()
+        EST.setape_es()
+        EST.setedad_es()
+        EST.setID_E()
+        EST.setTelefonoE()
+        EST.setAEsco()
+        EST.setValorP()
+        LE.append(EST)
+        
+    elif opcion ==3:
+        print("\nPara elejir Directivos escriba 1, Para elejir Estudiantes escriba 2\n\t")
+        consultar=int(input("Cual lista desea ver: "))
+        if consultar==1:
+            TLD=(len(LD))
+            print("Los directivos son: ")
+            for i in range(TLD):
+                print(LD[i].nombre, LD[i].apellido,LD[i].edadA,LD[i].ID_A,LD[i].telefono,LD[i].ATrabajo,LD[i].TContrato)
+                
+        elif consultar ==2:
+            TLE=(len(LE))
+            print("Los estudiantes son: ")
+            for i in range(TLE):
+                print(LE[i].nom_es,LE[i].ape_es,LE[i].edadE,LE[i].ID_E,LE[i].telefonoE,LE[i].AEsco,LE[i].ValorP)
+                
+    elif opcion ==4:
+        print("se cerro el programa ")
+        break
