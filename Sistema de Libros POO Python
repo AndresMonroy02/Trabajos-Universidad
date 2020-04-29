@@ -1,0 +1,156 @@
+#características comunes: el código, la marca, y el nombre del artículo
+LF=[]
+LE=[]
+LR=[]
+LL=[]
+
+class libro():
+    codigo=0
+    marca=""
+    arti=""
+    precio=0
+    
+    
+    def setdatosbasicos(self):
+        self.codigo=int(input("Digite el codigo del libro: "))
+        self.marca=input("Digite la marca del libro: ")
+        self.arti=input("Digite el titulo de l articulo: ")
+        self.precio=int(input("Digite el precio: "))
+        
+def buscarprecio(LB):
+    CB=int(input("Digite el codigo del libro que desea buscar el precio: "))
+    TLB=(len(LB))
+    for i in range(TLB):
+        if CB == LB[i].codigo:
+            print("El horario es: ",LB[i].precio)
+
+   #libros físicos tienen además un atributo pasta dura y portada (ambas booleanas)     
+class librofisico(libro):
+    pasta=""
+    portada=""
+    def setdatosfisi(self):
+        libro.setdatosbasicos(self)
+        self.pasta=input("Digite el tipo de pasta de el libro ´dura´ o ´blanda´: ")
+        self.portada=input("El libro tiene portada ´si´ o ´no´: ")
+        
+def imprimirfisico(LF1):
+    TLF1 = (len(LF1))
+    if TLF1 == 0:
+        print("No hay lbros para mostrar ")
+    else:
+        print("Los libros disponibles son: ")
+        print("Codigo \t\t\t\t Marca\t\t articulo\t\t Tipo de pasta\t\t portda")
+        for i in range(TLF1):
+            print(LF1[i].codigo,"\t\t","\t\t",LF1[i].marca,"\t\t",LF1[i].arti,"\t\t",LF1[i].pasta,"\t\t",LF1[i].portada)
+          
+class libroelectro():
+    portadaE = ""
+    def setdatoselectro(self):
+        libro.setdatosbasicos(self)
+        self.portadaE=input("El libro tiene portada ´si´ o ´no´: ")
+        
+def imprimirElec(LE1):
+    TLE1 = (len(LE1))
+    if TLE1 == 0:
+        print("No hay lbros para mostrar ")
+    else:
+        print("Los libros electronicos disponibles son: ")
+        print("Codigo \t\t\t\t Marca\t\t articulo\t\t portda")
+        for i in range(TLE1):
+            print(LE1[i].codigo,"\t\t","\t\t",LE1[i].marca,"\t\t",LE1[i].arti,"\t\t",LE1[i].portadaE)
+                
+    #revistas tienen un número de edición, tema central y separata.
+class revistas(libro):
+    numedi = 0
+    tema = ""
+    separat = ""
+    def setdatosrevi(self):
+        libro.setdatosbasicos(self)
+        self.numedi=int(input("Digite el numero de edicion de la revista: "))
+        self.tema=input("Digite el tema de la revista: ")
+        self.separat=input("Digite si tiene separata: ")
+        
+def imprimirrevista(LR1):
+    TLR1=(len(LR1))
+    if TLR1 == 0:
+        print("No hay revistas para mostrar")
+    else:
+        print("Las revistas disponibles son: ")
+        print("Codigo\t\t\t\t Marca \t\t  Articulo \t\t Numero edicion \t\t  Tema \t\t  Separata")
+        for i in range(TLR1):
+            print(LR1[i].codigo,"\t\t","\t\t",LR1[i].marca,"\t\t",LR1[i].arti,"\t\t",LR1[i].numedi,"\t\t",LR1[i].tema,"\t\t",LR1[i].separat)
+
+class licencias():
+    codigo = 0
+    marca = ""
+    version = ""
+    año = 0
+    def setdatosli(self):
+        self.codigo = int(input("Digite el codigo de la licenscia: "))
+        self.marca = input("Digite la marca de la licencia: ")
+        self.version = input("Digite la version de la licencia: ")
+        self.año = int(input("Digite el año de la licencia"))
+        
+def imprimirli(LL1):
+    TLL1=(len(LL1))
+    if TLL1 == 0:
+        print("No hay licencias disponilbles")
+    else:
+        print("Las licencias disponibles son: ")
+        print("Codigo \t\t\t\t Marca \t\t Version \t\t Año ")
+        for i in range(TLL1):
+            print(LL1[i].codigo,"\t\t","\t\t",LL1[i].marca,"\t\t",LL1[i].version,"\t\t",LL1[i].año)
+                
+while True:
+
+    opcion = int(input("\nMENU DE OPCIONES\n----------\n\t" +
+                   "1. Agregar Libro Fisico\n\t2. Agregar Libro electronico \n\t3. Agregar revistas \n\t4. Licencia de software \n\t5.consultar precios \n\t6. Consultar \n\t7. SALIR\n\n\t" +
+                   " INGRESE LA OPCION DE A REALIZAR: "))
+
+    if opcion == 1:
+        lifi=librofisico()
+        lifi.setdatosfisi()
+        LF.append(lifi)
+        
+    elif opcion == 2:
+        le = libroelectro
+        le.setdatoselctro
+        LE.append(le)
+        
+    elif opcion == 3:
+        re = revistas()
+        re.setdatosrevi
+        LR.append(re)
+        
+    elif opcion == 4:
+        ls = licencias()
+        ls.setdatosli()
+        LL.append(ls)
+        
+    elif opcion == 5:
+        consultar=int(input("Que precio consultar: 1.Libro fisico,  2.Libro Electronico, 3. revistas, 4. Licencias de software: "))
+        if consultar ==1:
+            buscarprecio(LF)
+        elif consultar==2:
+            buscarprecio(LE)
+        elif consultar==3:
+            buscarprecio(LR)
+        elif consultar==4:
+            buscarprecio(LL)
+            
+    elif opcion == 6:
+            consultar=int(input("Que desea consultar: 1.Libro fisico,  2.Libro Electronico, 3. revistas, 4. Licencias de software: "))
+            if consultar ==1:
+                imprimirfisico(LF)
+            elif consultar ==2:
+                imprimirElec(LE)
+            elif consultar ==3:
+                imprimirrevista(LR)
+            elif consultar ==4:
+                imprimirli(LL)
+            else:
+                print("Digite un numero valido")
+            
+    elif opcion ==7:
+        print("El programa se cerro")
+        break
