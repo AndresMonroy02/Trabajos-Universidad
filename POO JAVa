@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+
+
+public class persona {
+    //crear un programa que contenga la clase persona con minimo 4 atributos y sus respectivos metodos 
+
+    //atributos
+    String nombre;
+    String apellido;
+    String apellido2;
+    int edad;
+
+    Scanner sc = new Scanner(System.in);
+
+    //Metodos para llenar datos
+    public void llenarDatos(){
+        System.out.print("Digite el nombre de la persona: ");
+        nombre= sc.next();
+        System.out.print("Digite el apellido de la persona: ");
+        apellido= sc.next();
+        System.out.print("Digite el segundo apellido de la persona: ");
+        apellido2= sc.next();
+        System.out.print("Digite la edad de la persona: ");
+        edad = sc.nextInt();
+    }
+
+    public void mostrarDatos(persona personax){
+        System.out.println(personax.nombre+" "+ personax.apellido +" "+personax.apellido2 +" la edad es: "+personax.edad);
+    }
+
+    public void caminar(persona personax){
+        System.out.println(personax.nombre + " esta caminando  ");
+    }
+
+    public void hablar(persona personax){
+        System.out.println(personax.nombre +" esta hablando");
+    }
+
+    public void correr(persona personax){
+        System.out.println(personax.nombre +" esta corriendo");
+    }
+
+    public static void main(String[] args){
+        //Se crea el objeto persona 4 veces
+        persona persona1 = new persona();
+        persona persona2 = new persona();
+        persona persona3 = new persona();
+        persona persona4 = new persona();
+
+        //llama el metodo llenar datos por cada persona
+        persona1.llenarDatos();
+        persona2.llenarDatos();
+        persona3.llenarDatos();
+        persona4.llenarDatos();
+
+
+        //Mostrar datos 
+        persona1.mostrarDatos(persona1);
+        persona2.mostrarDatos(persona2);
+        persona3.mostrarDatos(persona3);
+        persona4.mostrarDatos(persona4);
+
+        //Metodo caminar
+        persona1.caminar(persona1);
+        persona2.caminar(persona2);
+        persona3.caminar(persona3);
+        persona4.caminar(persona4);
+
+        //Metodo hablar
+        persona1.hablar(persona1);
+        persona2.hablar(persona2);
+        persona3.hablar(persona3);
+        persona4.hablar(persona4);
+
+        //Metodo Correr
+        persona1.correr(persona1);
+        persona2.correr(persona2);
+        persona3.correr(persona3);
+        persona4.correr(persona4);
+    }
+}
