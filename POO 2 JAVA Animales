@@ -1,0 +1,84 @@
+import java.util.Scanner;
+
+public class animales {
+
+    //Crear un programa que contenga la clase la animales, con los siguientes componentes
+    //atributos: tipo(perro, ave, pez), especie(terrestre, acuatico, aereo), alimentacion(carnivoro, herbivoro, omnivoros)
+    //estructura(vertebrado, invertebrados)
+    //Metodos: Comer, Respirar, Mirar, Reproducirse
+    String tipo;
+    String especie;
+    String alimentacion;
+    String estructura;
+    Scanner sc = new Scanner(System.in);
+
+    public void llenarDatos(){
+        System.out.print("Digite el tipo del animal: ");
+        tipo= sc.next();
+        System.out.print("Digite la especie del animal: ");
+        especie= sc.next();
+        System.out.print("Digite la alimentacion del animal: ");
+        alimentacion= sc.next();
+        System.out.print("Digite la estructura del animal: ");
+        estructura= sc.next();
+    }
+
+    public void mostrar(animales animalx){
+        System.out.println("Tipo: "+animalx.tipo);
+        System.out.println("Especie: "+animalx.especie);
+        System.out.println("Alimentacion:"+animalx.alimentacion);
+    }
+    public void comer(animales animalx){
+        System.out.println(animalx.tipo+" esta comiendo");
+
+    }
+    public void respirar(animales animalx){
+        System.out.println(animalx.tipo+" esta respirando ");
+
+    }
+    public void mirar(animales animalx){
+        System.out.println(animalx.tipo+" esta mirando ");
+
+    }
+    public void Reproducirse(animales animalx){
+        System.out.println(animalx.tipo+" esta haciendo el delicioso ");
+
+    }
+
+    public static void main(String[] args){
+        animales animal1 = new animales();
+        animales animal2 = new animales();
+        animales animal3 = new animales();
+
+        //comer, respirar, mirar, reproducirse
+        animal1.llenarDatos();
+        animal2.llenarDatos();
+        animal3.llenarDatos();
+        System.out.println("");
+
+        animal1.mostrar(animal1);
+        animal2.mostrar(animal2);
+        animal3.mostrar(animal3);
+        System.out.println("");
+
+        animal1.comer(animal1);
+        animal2.comer(animal2);
+        animal3.comer(animal3);
+
+        System.out.println("");
+        animal1.respirar(animal1);
+        animal2.respirar(animal2);
+        animal3.respirar(animal3);
+
+        System.out.println("");
+        animal1.mirar(animal1);
+        animal2.mirar(animal2);
+        animal3.mirar(animal3);
+
+        System.out.println("");
+        animal1.Reproducirse(animal1);
+        animal2.Reproducirse(animal2);
+        animal3.Reproducirse(animal3);
+
+    }
+}
