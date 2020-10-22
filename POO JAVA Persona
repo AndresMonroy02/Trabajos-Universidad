@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-
-
 public class persona {
     //crear un programa que contenga la clase persona con minimo 4 atributos y sus respectivos metodos 
 
@@ -14,15 +12,13 @@ public class persona {
     Scanner sc = new Scanner(System.in);
 
     //Metodos para llenar datos
-    public void llenarDatos(){
-        System.out.print("Digite el nombre de la persona: ");
-        nombre= sc.next();
-        System.out.print("Digite el apellido de la persona: ");
-        apellido= sc.next();
-        System.out.print("Digite el segundo apellido de la persona: ");
-        apellido2= sc.next();
-        System.out.print("Digite la edad de la persona: ");
-        edad = sc.nextInt();
+
+
+    public persona(String nombrex,String apellidox, String apellido2x, int edadx){
+        nombre = nombrex;
+        apellido = apellidox;
+        apellido2 = apellido2x;
+        edad = edadx;
     }
 
     public void mostrarDatos(persona personax){
@@ -42,41 +38,83 @@ public class persona {
     }
 
     public static void main(String[] args){
+
+        String nombre_;
+        String apellido_;
+        String apellido2_;
+        int edad_;
+        Scanner sc = new Scanner(System.in);
+
         //Se crea el objeto persona 4 veces
-        persona persona1 = new persona();
-        persona persona2 = new persona();
-        persona persona3 = new persona();
-        persona persona4 = new persona();
+        System.out.print("Digite el nombre de la persona: ");
+        nombre_= sc.next();
+        System.out.print("Digite el apellido de la persona: ");
+        apellido_= sc.next();
+        System.out.print("Digite el segundo apellido de la persona: ");
+        apellido2_= sc.next();
+        System.out.print("Digite la edad de la persona: ");
+        edad_ = sc.nextInt();
+        persona persona1 = new persona(nombre_,apellido_,apellido2_,edad_);
 
-        //llama el metodo llenar datos por cada persona
-        persona1.llenarDatos();
-        persona2.llenarDatos();
-        persona3.llenarDatos();
-        persona4.llenarDatos();
+        
+        System.out.print("Digite el nombre de la persona: ");
+        nombre_= sc.next();
+        System.out.print("Digite el apellido de la persona: ");
+        apellido_= sc.next();
+        System.out.print("Digite el segundo apellido de la persona: ");
+        apellido2_= sc.next();
+        System.out.print("Digite la edad de la persona: ");
+        edad_ = sc.nextInt();
+        persona persona2 = new persona(nombre_,apellido_,apellido2_,edad_);
 
+
+        System.out.print("Digite el nombre de la persona: ");
+        nombre_= sc.next();
+        System.out.print("Digite el apellido de la persona: ");
+        apellido_= sc.next();
+        System.out.print("Digite el segundo apellido de la persona: ");
+        apellido2_= sc.next();
+        System.out.print("Digite la edad de la persona: ");
+        edad_ = sc.nextInt();
+        persona persona3 = new persona(nombre_,apellido_,apellido2_,edad_);
+
+
+        System.out.print("Digite el nombre de la persona: ");
+        nombre_= sc.next();
+        System.out.print("Digite el apellido de la persona: ");
+        apellido_= sc.next();
+        System.out.print("Digite el segundo apellido de la persona: ");
+        apellido2_= sc.next();
+        System.out.print("Digite la edad de la persona: ");
+        edad_ = sc.nextInt();
+        persona persona4 = new persona(nombre_,apellido_,apellido2_,edad_);
 
         //Mostrar datos 
         persona1.mostrarDatos(persona1);
         persona2.mostrarDatos(persona2);
         persona3.mostrarDatos(persona3);
         persona4.mostrarDatos(persona4);
+        System.out.println("");
 
         //Metodo caminar
         persona1.caminar(persona1);
         persona2.caminar(persona2);
         persona3.caminar(persona3);
         persona4.caminar(persona4);
+        System.out.println("");
 
         //Metodo hablar
         persona1.hablar(persona1);
         persona2.hablar(persona2);
         persona3.hablar(persona3);
         persona4.hablar(persona4);
+        System.out.println("");
 
         //Metodo Correr
         persona1.correr(persona1);
         persona2.correr(persona2);
         persona3.correr(persona3);
         persona4.correr(persona4);
+        System.out.println("");
     }
 }
