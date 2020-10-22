@@ -10,57 +10,77 @@ public class animales {
     String especie;
     String alimentacion;
     String estructura;
-    Scanner sc = new Scanner(System.in);
 
-    public void llenarDatos(){
-        System.out.print("Digite el tipo del animal: ");
-        tipo= sc.next();
-        System.out.print("Digite la especie del animal: ");
-        especie= sc.next();
-        System.out.print("Digite la alimentacion del animal: ");
-        alimentacion= sc.next();
-        System.out.print("Digite la estructura del animal: ");
-        estructura= sc.next();
+    public animales(String tipox, String especiex, String alimentacionx, String estructurax){
+        tipo = tipox;
+        especie = especiex;
+        alimentacion = alimentacionx;
+        estructura = estructurax;
     }
 
     public void mostrar(animales animalx){
         System.out.println("Tipo: "+animalx.tipo);
         System.out.println("Especie: "+animalx.especie);
         System.out.println("Alimentacion:"+animalx.alimentacion);
+        System.out.println("");
     }
     public void comer(animales animalx){
         System.out.println(animalx.tipo+" esta comiendo");
-
     }
     public void respirar(animales animalx){
         System.out.println(animalx.tipo+" esta respirando ");
-
     }
     public void mirar(animales animalx){
         System.out.println(animalx.tipo+" esta mirando ");
-
     }
     public void Reproducirse(animales animalx){
-        System.out.println(animalx.tipo+" esta haciendo el delicioso ");
-
+        System.out.println(animalx.tipo+" esta haciendp eñ delicioso ");
     }
 
     public static void main(String[] args){
-        animales animal1 = new animales();
-        animales animal2 = new animales();
-        animales animal3 = new animales();
+        String tipox;
+        String especiex;
+        String alimentacionx;
+        String estructurax;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite el tipo del animal: ");
+        tipox = sc.next();
+        System.out.print("Digite la especie del animal: ");
+        especiex = sc.next();
+        System.out.print("Digite la alimentacion del animal: ");
+        alimentacionx= sc.next();
+        System.out.print("Digite la estructura del animal: ");
+        estructurax= sc.next();
+        animales animal1 = new animales(tipox, especiex, alimentacionx, estructurax);
+
+        System.out.print("Digite el tipo del animal: ");
+        tipox = sc.next();
+        System.out.print("Digite la especie del animal: ");
+        especiex = sc.next();
+        System.out.print("Digite la alimentacion del animal: ");
+        alimentacionx= sc.next();
+        System.out.print("Digite la estructura del animal: ");
+        estructurax= sc.next();
+        animales animal2 = new animales(tipox, especiex, alimentacionx, estructurax);
+
+
+        System.out.print("Digite el tipo del animal: ");
+        tipox = sc.next();
+        System.out.print("Digite la especie del animal: ");
+        especiex = sc.next();
+        System.out.print("Digite la alimentacion del animal: ");
+        alimentacionx= sc.next();
+        System.out.print("Digite la estructura del animal: ");
+        estructurax= sc.next();
+        animales animal3 = new animales(tipox, especiex, alimentacionx, estructurax);
 
         //comer, respirar, mirar, reproducirse
-        animal1.llenarDatos();
-        animal2.llenarDatos();
-        animal3.llenarDatos();
-        System.out.println("");
-
         animal1.mostrar(animal1);
         animal2.mostrar(animal2);
         animal3.mostrar(animal3);
-        System.out.println("");
 
+        System.out.println("");
         animal1.comer(animal1);
         animal2.comer(animal2);
         animal3.comer(animal3);
